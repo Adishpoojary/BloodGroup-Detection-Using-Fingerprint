@@ -154,7 +154,7 @@
 }
  /* Footer */
     footer {
-        background-color: #333;
+        background-color: #d33054;
         color: white;
         padding: 10px 0;
         text-align: center;
@@ -162,9 +162,9 @@
     }
 
 
-    //
+    
 
-                .logout {
+        .logout {
             position: absolute;
             top: 20px;
             right: 20px;
@@ -238,18 +238,18 @@
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
       <a href="/home" class="logo d-flex align-items-center me-auto">
-        <img src="../static/img/logo.png" alt="">
+        <img src="../static/img/smvitm3.png" alt="">
         <h1 class="sitename">Bloodgroup Prediction</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="/home">Home</a></li>
-          <li><a href="/about">About</a></li>
+          <!-- <li><a href="/about">About</a></li> -->
             <li><a href="/team" class="active">Team</a></li>
           {% if 'user_id' in session %}
             <li><a href="/predict_blood_group">Predict</a></li>
-               <li><a href="/Accurancy">Accurancy</a></li>
+               <!-- <li><a href="/Accurancy">Accurancy</a></li> -->
             <li><a href="/profile"><i class="bi bi-person-circle"></i> Profile</a></li>
             <li><a href="/logout" class="logout-link">
     <i class="bi bi-box-arrow-right"></i> Logout
@@ -283,7 +283,7 @@
 <!--            <a href="login" class="btn-get-started">Get Started</a>-->
 <!--            <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>-->
 <!--          </div>-->
-          <img src="../static/img/11.webp" class="img-fluid hero-img" alt="" data-aos="zoom-out" data-aos-delay="300">
+          <img src="../static/img/11-2.png" class="img-fluid hero-img" alt="" data-aos="zoom-out" data-aos-delay="300">
         </div>
       </div>
 
@@ -296,49 +296,49 @@
         <div class="team-cards">
             <!-- Team Member 1 -->
             <div class="team-card">
-                <img src="{{ url_for('static', filename='img/Team pic/Karthi.jpeg') }}" alt="Karthik G">
-                <h3>Karthik G</h3>
+                <img src="{{ url_for('static', filename='img/Team pic/Adish.jpeg') }}" alt="Adish Poojary">
+                <h3>Adish Poojary</h3>
                 
-                <p>1EW22CS407 - EWIT</p>
+                <p>4MW22CS004 - (CSE)</p>
                 <div class="social-links">
-                    <a href="https://www.linkedin.com/in/karthik-g-04b016210/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/karthik-g" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/adish-poojary/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Adishpoojary" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
                 </div>
             </div>
 
             <!-- Team Member 2 -->
             <div class="team-card">
-                <img src="{{ url_for('static', filename='img/Team pic/Abhi.jpeg') }}" alt="Abhisheka B C">
-                <h3>Abhisheka B C</h3>
+                <img src="{{ url_for('static', filename='img/Team pic/Abhay.jpeg') }}" alt="Abhay G Poojary">
+                <h3>Abhay G Poojary</h3>
                 
-                <p>1EW22CS400 - EWIT</p>
+                <p>4MW22CS001 - (CSE)</p>
                 <div class="social-links">
-                    <a href="https://www.linkedin.com/in/abhisheka-b-c-5b9623254" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/Abhi123467" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/abhaygpoojary/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/AbhayGPoojary" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
                 </div>
             </div>
 
             <!-- Team Member 3 -->
             <div class="team-card">
-                <img src="{{ url_for('static', filename='img/Team pic/prash.jpeg') }}" alt="Prashanth">
-                <h3>Prashanth</h3>
+                <img src="{{ url_for('static', filename='img/Team pic/Karthik.jpeg') }}" alt="Karthik Nayak">
+                <h3>Karthik Nayak</h3>
                 
-                <p>1EW21CS110 - EWIT</p>
+                <p>4MW22CS073 -(CSE)</p>
                 <div class="social-links">
-                    <a href="https://www.linkedin.com/in/prashanth-n-59407b260/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/Prash110" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/karthik-nayak-b90105306/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Karthiknayak26" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
                 </div>
             </div>
 
             <!-- Team Member 4 -->
             <div class="team-card">
-                <img src="{{ url_for('static', filename='img/Team pic/ln.jpeg') }}" alt="Lakshminarsimha PK">
+                <img src="{{ url_for('static', filename='img/Team pic/Kiran.jpeg') }}" alt="Kiran Divakar Salian">
                 
-                 <h3>Lakshminarsimha PK</h3>
-                <p>1EW22CS410 - EWIT</p>
+                 <h3>Kiran Divakar Salian</h3>
+                <p>4MW22CS081 - (CSE)</p>
                 <div class="social-links">
-                    <a href="https://www.linkedin.com/in/lakshminarasimha-p-k-452b37293/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/Lakshminarasimha228" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/kiran-divakar-salian-033177280/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/KiranDivakarSalian" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
                 </div>
             </div>
         </div>
@@ -346,7 +346,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 EWIT. All rights reserved.</p>
+        <p>&copy;Team-T29 | 2025 SMVITM.</p>
     </footer>
 
   <!-- Scroll Top -->

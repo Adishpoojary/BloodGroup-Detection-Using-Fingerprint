@@ -4,7 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index</title>
+  <title>Results | Blood Group Prediction</title>
+  <meta content="Blood Group Prediction Results Using Fingerprints" name="description">
+  <meta content="blood group, fingerprint, prediction, results" name="keywords">
 
   <!-- Favicons -->
   <link href="../static/img/favicon.png" rel="icon">
@@ -26,159 +28,247 @@
   <link href="../static/css/main.css" rel="stylesheet">
 
   <style>
-    body {
+    :root {
+      --primary-color: #9A3A8E;
+      --secondary-color: #D22666;
+      --accent-color: #E92231;
+      --light-bg: #f8f9fa;
+      --dark-text: #333;
+      --white: #ffffff;
+    }
+
+    
+    
+
+    
+
+    .logout-link i {
+      margin-right: 5px;
+    }
+
+    /* Results Section Styles */
+    .results-section {
+      padding: 120px 0 60px;
+      background: var(--white);
+    }
+
+    .results-container {
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      background: var(--white);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .image-side {
+      flex: 1;
+      background: linear-gradient(135deg, #c69eee, #ff97bd);
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: var(--white);
+    }
+
+    .image-side img.logo {
+      max-width: 180px;
+      margin-bottom: 30px;
+    }
+
+    .image-side h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 20px;
       text-align: center;
     }
 
-    .container {
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 0px rgba(0, 0, 0, 0);
-      max-width: 1300px;
-      margin-left: auto;
-      margin-right: auto;
+    .image-side p {
+      font-size: 1.1rem;
+      text-align: center;
+      opacity: 0.9;
     }
 
-    h1 {
-      color: #333;
+    .image-side .illustration {
+      max-width: 80%;
+      margin-top: 30px;
     }
 
-    .blood-group {
-      font-size: 24px;
-      font-weight: bold;
-      color: #007bff;
+    .results-side {
+      flex: 1;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .results-side h2 {
+      color: var(--primary-color);
+      font-weight: 700;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    /* Loading Animation */
+    .loading-container {
+      width: 100%;
+      max-width: 250px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 30px;
+    }
+
+    .loading-gif {
+      width: 100%;
+      max-width: 200px;
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       margin-bottom: 20px;
     }
 
-    .logout {
-      position: absolute;
-      top: 20px;
-      right: 20px;
+    .loading-gif img {
+      width: 100%;
+      height: auto;
     }
 
-    .logout a {
-      color: rgb(0, 0, 0);
-      font-size: x-large;
-      text-decoration: none;
-      font-weight: bold;
+    /* Blood Group Result */
+    .blood-group-result {
+      text-align: center;
+      display: none;
     }
 
-    .logout a:hover {
-      text-decoration: underline;
-    }
-
-    /* Adjust the loading GIF container size */
-    #loading-gif {
-      width: 100%;  /* Adjust to the container's full width */
-      max-width: 200px; /* Set max-width for the GIF container */
-      height: 200px;  /* Set a fixed height for the container */
-      margin: 0 auto;  /* Center the container */
+    .blood-group-display {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
       display: flex;
-      justify-content: center;  /* Center the GIF */
-      align-items: center;  /* Center the GIF vertically */
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 10px 30px rgba(164, 57, 224, 0.3);
+      color: var(--white);
+      font-size: 3.5rem;
+      font-weight: 700;
     }
 
-    #gif {
-      width: 100%; /* Make the GIF scale with the container's width */
-      height: auto; /* Maintain aspect ratio */
+    .blood-group-display .blood-icon {
+      position: absolute;
+      top: -15px;
+      right: -15px;
+      background: var(--accent-color);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(233, 34, 49, 0.3);
     }
 
+    .blood-group-display .blood-icon i {
+      font-size: 1.5rem;
+      color: var(--white);
+    }
 
-  //
-                .logout {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-        }
-        .logout a {
-            color: rgb(0, 0, 0);
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .logout a:hover {
-            text-decoration: underline;
-        }
-        .container {
-            max-width: 1400px;
-            width: 100%;
-            padding: 20px;
-            border-radius: 10px;
-            background-color: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 0 0px rgba(0, 0, 0, 0);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        label {
-            margin-bottom: 5px;
-            text-align: left;
-            width: 100%;
-        }
-        input[type="file"] {
-            width: 100%;
-            margin-bottom: 20px;
-        }
-        #imagePreview {
-            display: none;
-            max-width: 100%;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            border: 1px solid white;
-        }
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
+    .blood-group-info {
+      margin-top: 20px;
+      padding: 20px;
+      background-color: rgba(164, 57, 224, 0.1);
+      border-radius: 10px;
+      width: 100%;
+      max-width: 400px;
+    }
 
+    .blood-group-info h3 {
+      color: var(--primary-color);
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
 
+    .blood-group-info p {
+      color: var(--dark-text);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
 
-.logout-link i {
-    margin-right: 5px; /* Space between icon and text */
-}
+    .back-btn {
+      margin-top: 30px;
+      background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 4px 15px rgba(210, 38, 102, 0.3);
+    }
 
+    .back-btn:hover {
+      transform: translateY(-2px);
+      color: white;
+      box-shadow: 0 6px 20px rgba(210, 38, 102, 0.4);
+    }
 
+    /* Responsive Styles */
+    @media (max-width: 991px) {
+      .results-container {
+        flex-direction: column;
+      }
 
+      .image-side {
+        padding: 30px;
+      }
+
+      .results-side {
+        padding: 30px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .results-section {
+        padding: 100px 20px 40px;
+      }
+    }
   </style>
 </head>
 
-<body class="index-page">
-
+<body>
+  <!-- Header -->
   <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center">
-      <a href="/home" class="logo d-flex align-items-center me-auto">
-        <img src="../static/img/logo.png" alt="">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <a href="/home" class="logo d-flex align-items-center">
+        <img src="../static/img/smvitm3.png" alt="Logo">
         <h1 class="sitename">Bloodgroup Prediction</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="/home" >Home</a></li>
-          <li><a href="/about">About</a></li>
+          <li><a href="/home">Home</a></li>
           <li><a href="/team">Team</a></li>
-
           {% if 'user_id' in session %}
-          <li><a href="/predict_blood_group" class="active">Predict</a></li>
-               <li><a href="/Accurancy" >Accurancy</a></li>
+            <li><a href="/predict_blood_group" class="active">Predict</a></li>
+            <!-- <li><a href="/Accurancy">Accuracy</a></li> -->
             <li><a href="/profile"><i class="bi bi-person-circle"></i> Profile</a></li>
-              <li><a href="/logout" class="logout-link">
-    <i class="bi bi-box-arrow-right"></i> Logout
-</a></li>
-        {% else %}
+            <li><a href="/logout" class="logout-link">
+                <i class="bi bi-box-arrow-right"></i> Logout
+              </a></li>
+          {% else %}
             <li><a href="/login">Login</a></li>
             <li><a href="/signup">Sign Up</a></li>
-        {% endif %}
+          {% endif %}
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -186,51 +276,57 @@
   </header>
 
   <main class="main">
-    <section id="hero" class="hero section">
-      <div class="hero-bg">
-        <img src="../static/img/5.webp" alt="">
-      </div>
+    <!-- Results Section -->
+    <section class="results-section">
+      <div class="container">
+        <div class="results-container">
+          <!-- Left Side - Image and Description -->
+          <div class="image-side">
+            <img src="../static/img/smvitm3.png" alt="Logo" class="logo">
+            <h2>Blood Group Analysis</h2>
+            <p>Our advanced algorithm analyzes your fingerprint patterns to predict your blood group accurately</p>
+            <!-- <img src="../static/img/55.webp" alt="Results Illustration" class="illustration"> -->
+          </div>
 
-      <div class="container text-center">
-        <div class="d-flex flex-column justify-content-center align-items-center">
-         <h1 data-aos="fade-up">Get your <span>Results</span></h1>
-<img src="../static/img/55.webp" class="img-fluid hero-img" alt="" data-aos="zoom-out" data-aos-delay="300"> </div>
+          <!-- Right Side - Results -->
+          <div class="results-side">
+            <h2>Your Blood Group Result</h2>
+            
+            <!-- Loading Animation -->
+            <div id="loading-container" class="loading-container">
+              <div class="loading-gif">
+                <img src="/static/fringerprint1.gif" alt="Analyzing Fingerprint...">
+              </div>
+              
+            </div>
+            
+            <!-- Blood Group Result (Initially Hidden) -->
+            <div id="blood-group-result" class="blood-group-result">
+              <div class="blood-group-display">
+                <span id="blood-group-text">{{ blood_group }}</span>
+                <div class="blood-icon">
+                  <i class="bi bi-droplet-fill"></i>
+                </div>
+              </div>
+              
+              <a href="/predict_blood_group" class="back-btn">
+                <i class="bi bi-arrow-left me-2"></i> Test Another Fingerprint
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
-
-    <div class="logout">
-      <a href="/">Logout</a>
-    </div>
-
-    <div class="container">
-      <h1>Blood Group Predicted is</h1>
-      <br>
-
-
-      <!-- Loading GIF container -->
-      <div id="loading-gif">
-        <!-- Ensure the path to the GIF is correct -->
-        <img src="/static/fringerprint1.gif" alt="Loading..." id="gif" />
-      </div>
-
-      <!-- Blood group result hidden initially -->
-      <div id="blood-group" class="blood-group" style="display:none;">
-        <h1>Blood Group Predicted is</h1>
-      </div>
-    </div>
-
-    <script>
-      // Wait for 5 seconds, then show the blood group and hide the GIF
-      setTimeout(function () {
-        // Hide the GIF
-        document.getElementById('loading-gif').style.display = 'none';
-
-        // Show the blood group
-        document.getElementById('blood-group').style.display = 'block';
-        document.getElementById('blood-group').textContent = '{{ blood_group }}';  // Replace with the actual blood group dynamically
-      }, 5000); // 5000ms = 5 seconds
-    </script>
   </main>
+
+  <!-- Footer -->
+  <!-- <footer id="footer" class="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Bloodgroup Prediction</span></strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer> -->
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -240,7 +336,6 @@
 
   <!-- Vendor JS Files -->
   <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../static/vendor/php-email-form/validate.js"></script>
   <script src="../static/vendor/aos/aos.js"></script>
   <script src="../static/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="../static/vendor/swiper/swiper-bundle.min.js"></script>
@@ -248,6 +343,15 @@
   <!-- Main JS File -->
   <script src="../static/js/main.js"></script>
 
+  <script>
+    // Wait for 5 seconds, then show the blood group result and hide the loading animation
+    setTimeout(function () {
+      // Hide the loading container
+      document.getElementById('loading-container').style.display = 'none';
+      
+      // Show the blood group result
+      document.getElementById('blood-group-result').style.display = 'block';
+    }, 5000); // 5000ms = 5 seconds
+  </script>
 </body>
-
 </html>
