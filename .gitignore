@@ -1,69 +1,10 @@
-# Byte-compiled / optimized / DLL files
-_pycache_/
-*.py[cod]
-*$py.class
-
-# Virtual environments
+# Ignore virtual environments and binaries
 venv/
-VENV/
-.venv/
-
-# VS Code / PyCharm project settings
-.idea/
-.vscode/
-
-# Jupyter Notebook checkpoints
-.ipynb_checkpoints/
-
-# Environment files
-.env
-*.env
-
-# SQLite database
-*.db
-
-# Logs and temporary files
-*.log
-*.tmp
-
-# System files
-.DS_Store
-Thumbs.db
-
-# Python egg metadata
-*.egg-info/
-*.egg
-
-# Build artifacts
-build/
-dist/
-*.egg-info/
-
-# Test data, if dynamically generated
-/Test Images/
-
-
-# Ignore Python virtual environment
-venv/
-
-# Ignore DLL, LIB, and other binary files
-*.dll
-*.lib
-*.so
-*.pyd
+Code/venv/
+__pycache__/
 *.pyc
-__pycache__/
-
-# If you have specific folders like this
-Code/venv/
-Code/venv/Lib/site-packages/torch/
-# Ignore virtual environment
-venv/
-Code/venv/
-
-# Ignore large binaries
+*.pyd
 *.dll
 *.lib
-*.pyd
 *.so
-__pycache__/
+*.dylib
