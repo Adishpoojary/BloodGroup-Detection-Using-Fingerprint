@@ -57,3 +57,13 @@ __pycache__/
 # If you have specific folders like this
 Code/venv/
 Code/venv/Lib/site-packages/torch/
+# Ignore virtual environment
+venv/
+Code/venv/
+
+# Ignore large binaries
+*.dll
+*.lib
+*.pyd
+*.so
+__pycache__/
