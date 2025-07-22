@@ -41,3 +41,19 @@ dist/
 
 # Test data, if dynamically generated
 /Test Images/
+
+
+# Ignore Python virtual environment
+venv/
+
+# Ignore DLL, LIB, and other binary files
+*.dll
+*.lib
+*.so
+*.pyd
+*.pyc
+__pycache__/
+
+# If you have specific folders like this
+Code/venv/
+Code/venv/Lib/site-packages/torch/
