@@ -8,3 +8,15 @@ __pycache__/
 *.lib
 *.so
 *.dylib
+
+
+
+
+
+echo venv/>>.gitignore
+echo Code/venv/>>.gitignore
+echo *.dll>>.gitignore
+echo *.lib>>.gitignore
+echo *.pyd>>.gitignore
+echo *.pyc>>.gitignore
+echo __pycache__/>>.gitignore
